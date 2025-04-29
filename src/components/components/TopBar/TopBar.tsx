@@ -21,12 +21,6 @@ export const TopBar = () => {
   const width = useWidth();
   const pathname = usePathname();
 
-  const [hasMounted, setHasMounted] = useState(false);
-
-  useEffect(() => {
-    setHasMounted(true);
-  }, []);
-
   const getBarClass = (order: number) =>
     classNames(`${styles.bar} ${styles[`bar__${order}`]}`, {
       [styles[`bar__${order}__selected`]]: showMenu,
@@ -102,7 +96,7 @@ export const TopBar = () => {
           <div className="icon icon--button icon--send icon--send--yellow"></div>
         </Link>
 
-        {hasMounted && width < screenWidth.tablet && (
+        { width < screenWidth.tablet && (
           <div
             className={styles.icon1}
             onClick={() => setShowMenu((prev) => !prev)}
