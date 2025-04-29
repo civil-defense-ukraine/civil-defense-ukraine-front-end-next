@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import styles from "./TopBar.module.scss";
 import classNames from "classnames";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { MenuContext } from "../../context/MenuContext";
 import { useWidth } from "../../hooks/useWidth";
 import Image from "next/image";
