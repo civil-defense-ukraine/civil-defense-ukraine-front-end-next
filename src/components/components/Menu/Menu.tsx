@@ -22,7 +22,7 @@ export const Menu = () => {
     return () => {
       document.body.classList.remove("no-scroll");
     };
-  }, [width]);
+  }, [width, setShowMenu]);
 
   const linkClick = () => {
     window.scrollTo({

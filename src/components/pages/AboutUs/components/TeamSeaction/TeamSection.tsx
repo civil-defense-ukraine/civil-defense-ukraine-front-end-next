@@ -12,8 +12,6 @@ export const TeamSection = () => {
   const [showAllTeam, setShowAllTeam] = useState(false);
   const { team, loading, error } = useAppSelector(state => state.team);
 
-  console.log(team);
-
   const width = useWidth();
 
   const itemsPerPage = useMemo(() => {
@@ -22,10 +20,10 @@ export const TeamSection = () => {
     } else {
       return 2;
     }
-  }, [width, team]);
+  }, [width]);
 
-  const visibleTeam = useMemo(() => team.slice(0, itemsPerPage), [width, team]);
-  const restOfTeam = useMemo(() => team.slice(itemsPerPage), [width, team]);
+  const visibleTeam = useMemo(() => team.slice(0, itemsPerPage), [team, itemsPerPage]);
+  const restOfTeam = useMemo(() => team.slice(itemsPerPage), [team, itemsPerPage]);
   const getMaxHeight = useMemo(() => {
     if (!showAllTeam) {
       return 0;
@@ -39,7 +37,7 @@ export const TeamSection = () => {
       return Math.ceil(restOfTeam.length * itemsPerPage) * (454 + 32);
     }
     return restOfTeam.length * (454 + 32);
-  }, [showAllTeam, width, restOfTeam]);
+  }, [showAllTeam, width, restOfTeam, itemsPerPage]);
 
 
   return (

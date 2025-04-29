@@ -16,7 +16,7 @@ export function useSessionStorage<T>(
 
     try {
       return JSON.parse(data);
-    } catch (e) {
+    } catch {
       return startValue;
     }
   });

@@ -1,7 +1,6 @@
 'use client';
 
 import { useMemo } from 'react';
-import { useRouter } from 'next/router';
 import { useAppSelector } from '../../app/hooks';
 import styles from './NewsPage.module.scss';
 import { NewsCatalog } from './components/NewsCatalog';
@@ -41,7 +40,7 @@ const NewsPage = () => {
     } else {
       return getFilteredNews({ news, category, sortBy, latestArticleId });
     }
-  }, [pathname, news, searchParams]);
+  }, [pathname, news, searchParams, latestArticle]);
 
   const numberOfPages = useMemo(
     () => Math.ceil(displayedNews.length / 12),

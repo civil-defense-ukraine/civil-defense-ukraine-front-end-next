@@ -1,6 +1,10 @@
 
 import { NewsContainer } from "@/components/pages/NewsContainer";
-import { LayoutProps } from "../../../.next/types/app/layout";
+import { ReactNode } from "react";
+
+export interface LayoutProps {
+  children: ReactNode;
+}
 
 const NewsLayout = ({ children }: LayoutProps) => {
   return <NewsContainer>{children}</NewsContainer>;

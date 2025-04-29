@@ -54,8 +54,8 @@ export const NewsCard: React.FC<Props> = ({ newsData, style }) => {
           </h3>
           </div>
           <p className={styles.mainText}>
-            {normalizedText.split('<br/>').map(textEl => (
-              <React.Fragment key={textEl.slice(5)}>
+            {normalizedText.split('<br/>').map((textEl, index) => (
+              <React.Fragment key={`${textEl.slice(5)}-${index}`}>
                 {textEl} <br />
               </React.Fragment>
             ))}

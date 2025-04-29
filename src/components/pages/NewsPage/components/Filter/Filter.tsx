@@ -47,13 +47,12 @@ export const FilterItem: React.FC<Props> = ({
   selectedDropdown,
   setSelectedDropdown,
 }) => {
-  // Get the current query params directly from the window.location.search
   const queryParams = new URLSearchParams(window.location.search);
-  const selectedOption = queryParams.get(name) || options[0];  // Default to first option
+  const selectedOption = queryParams.get(name) || options[0]; 
 
   const restOptions = useMemo(() => {
-    return options.filter(item => item !== selectedOption);
-  }, [selectedOption]);
+    return options.filter(item => item.toLowerCase() !== selectedOption.toLowerCase());
+  }, [selectedOption, options]);
 
   const onSelect = (newSelectedOption: string) => {
     const updatedQuery = new URLSearchParams(window.location.search);
@@ -64,10 +63,8 @@ export const FilterItem: React.FC<Props> = ({
       updatedQuery.set(name, newSelectedOption.toLowerCase());
     }
 
-    // Remove 'page' query parameter when selecting a new option
     updatedQuery.delete('page');
 
-    // Update the URL without reloading the page
     window.history.pushState(
       {},
       '',

@@ -1,21 +1,22 @@
-'use client';
+"use client";
 
-import styles from './NewsArticle.module.scss';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
-import { LatestNews } from '../../components/LatestNews';
-import { getNormalized } from '../../utils/getNormalized';
-import { SocialMedia } from '../../components/SocialMedia';
-import { News } from '../../types/News';
-import { useEffect, useMemo, useRef, useState } from 'react';
-import { loadArticle } from '../../features/articleSlice';
+import styles from "./NewsArticle.module.scss";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { LatestNews } from "../../components/LatestNews";
+import { getNormalized } from "../../utils/getNormalized";
+import { SocialMedia } from "../../components/SocialMedia";
+import { News } from "../../types/News";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { loadArticle } from "../../features/articleSlice";
 
-import { LoadingPage } from '../LoadingPage/LoadingPage';
-import classNames from 'classnames';
-import { sort } from '../../utils/sortItems';
-import { ErrorComponent } from '@/components/components/ErrorComponent';
+import { LoadingPage } from "../LoadingPage/LoadingPage";
+import classNames from "classnames";
+import { sort } from "../../utils/sortItems";
+import { ErrorComponent } from "@/components/components/ErrorComponent";
+import Image from "next/image";
 
-const NewsArticle = ({newsId}: {newsId: string}) => {
-  const { news } = useAppSelector(state => state.news);
+const NewsArticle = ({ newsId }: { newsId: string }) => {
+  const { news } = useAppSelector((state) => state.news);
   const [loaded, setLoaded] = useState(false);
   const dispatch = useAppDispatch();
   const copyButton = useRef<HTMLButtonElement>(null);
@@ -27,13 +28,13 @@ const NewsArticle = ({newsId}: {newsId: string}) => {
       window.scrollTo({
         top: 0,
         left: 0,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
       setCopied(false);
     }
   }, [newsId, dispatch]);
 
-  const { article, loading, error } = useAppSelector(state => state.article);
+  const { article, loading, error } = useAppSelector((state) => state.article);
   const recentArticles = useMemo(() => {
     const latestNewsToDisplay = news.filter((newsItem) => {
       if (article) {
@@ -42,7 +43,7 @@ const NewsArticle = ({newsId}: {newsId: string}) => {
 
       return true;
     });
-    
+
     return latestNewsToDisplay.sort(sort.newsByDate).slice(0, 10);
   }, [article, news]);
 
@@ -86,16 +87,18 @@ const NewsArticle = ({newsId}: {newsId: string}) => {
             skeleton: !loaded,
           })}
         >
-          <img
+          <Image
             className={styles.img}
-            onLoad={() => setLoaded(true)}
+            onLoadingComplete={() => setLoaded(true)}
             src={image}
             alt={title}
             loading="lazy"
+            width={500}
+            height={300}
           />
         </div>
         <p className={styles.mainText}>
-          {text.split('<br/>').map((textEl, index) => (
+          {text.split("<br/>").map((textEl, index) => (
             <span key={index}>
               {textEl} <br />
             </span>
@@ -108,7 +111,7 @@ const NewsArticle = ({newsId}: {newsId: string}) => {
             onClick={copyLink}
             className={`${styles.share__button}`}
           >
-            {!copied ? 'COPY LINK' : 'COPIED'}
+            {!copied ? "COPY LINK" : "COPIED"}
           </button>
           <SocialMedia />
         </div>

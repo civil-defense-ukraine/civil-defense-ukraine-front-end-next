@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'; // Import Image from Next.js
 import styles from './Header.module.scss';
 import { useElementOnScreen } from '../../../../hooks/useElementOnScreen';
 import { SocialMedia } from '../../../../components/SocialMedia';

@@ -13,11 +13,11 @@ export const AboutUsInfo = () => {
         <div className={`${styles.article__img} skeleton`}>
           <Image
             className={styles.article__img}
-            src="/imgs/about-us-page/founders.png"  // Update to Next.js compatible path
+            src="/imgs/about-us-page/founders.png"
             alt="Civil Defense Founders"
             loading="lazy"
-            width={500}  // Adjust according to your image size
-            height={300} // Adjust according to your image size
+            width={500}
+            height={300}
             onLoadingComplete={(e) => {
               e.parentElement?.classList.remove('skeleton');
             }}
@@ -31,7 +31,7 @@ export const AboutUsInfo = () => {
             <br />
             Civil Defense Ukraine is a charitable organization founded in
             February-March 2022, when the war began. Our mission is to assist
-            civilians in Ukraine who took up arms to defend the country. That's
+            civilians in Ukraine who took up arms to defend the country. That`s
             why we are called Civil Defense. <br /> We now live in Denmark, but
             we are Ukrainians, dedicating our free time to support the people of
             our native country.
@@ -45,11 +45,11 @@ export const AboutUsInfo = () => {
         <div className={`${styles.article__img} skeleton`}>
           <Image
             className={styles.article__img}
-            src="/imgs/about-us-page/whatDoWeDo.png"  // Update to Next.js compatible path
+            src="/imgs/about-us-page/whatDoWeDo.png"  
             alt="Territorial Defense Unit"
             loading="lazy"
-            width={500}  // Adjust according to your image size
-            height={300} // Adjust according to your image size
+            width={500} 
+            height={300} 
             onLoadingComplete={(e) => {
               e.parentElement?.classList.remove('skeleton');
             }}
@@ -66,7 +66,7 @@ export const AboutUsInfo = () => {
             traumatized for life. These are innocent people, with ordinary jobs
             and ordinary lives, who “merely” want the freedom, which we take for
             granted in the West. Instead, they are faced with the brutal
-            reality, fighting for Ukraine's existence.
+            reality, fighting for Ukraine`s existence.
             <br />
             Early on in the war, we were made aware of the fact that people we
             know, who have volunteered for the Territorial Defense Unit, have no
@@ -85,14 +85,14 @@ export const AboutUsInfo = () => {
         <div className={`${styles.article__img} skeleton`}>
           <Image
             className={styles.article__img}
-            src="/imgs/about-us-page/mission.png"  // Update to Next.js compatible path
+            src="/imgs/about-us-page/mission.png" 
             alt="Stop War"
             onLoadingComplete={(e) => {
               e.parentElement?.classList.remove('skeleton');
             }}
             loading="lazy"
-            width={500}  // Adjust according to your image size
-            height={300} // Adjust according to your image size
+            width={500}  
+            height={300}
           />
         </div>
         <span>

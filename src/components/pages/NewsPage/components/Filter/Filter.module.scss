@@ -92,6 +92,7 @@
   align-items: center;
   justify-content: space-between;
   transition: color 500ms;
+  text-transform: capitalize;
 
   &__text {
     color: $blue;
@@ -111,6 +112,7 @@
 .filterItem {
   position: relative;
   display: inline;
+  text-transform: capitalize;
 
   &::after {
     content: '';
