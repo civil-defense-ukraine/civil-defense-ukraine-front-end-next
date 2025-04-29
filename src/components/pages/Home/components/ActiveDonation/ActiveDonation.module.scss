@@ -1,0 +1,71 @@
+@import '../../../../styles/styles.scss';
+
+.wrapper {
+  background-color: $blue;
+  @include gap-btw-blocks;
+}
+
+.container {
+  color: $white;
+  text-align: center;
+
+  @include max-width;
+  gap: 32px;
+
+  @include padding-inline;
+  padding-block: 64px;
+
+  @include on-tablet {
+    gap: 56px;
+  }
+}
+
+.gridBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  @include on-tablet {
+    @include page-grid;
+    justify-items: center;
+    align-items: center;
+  }
+
+  @include on-desktop {
+    padding-top: 32px;
+  }
+
+  &__logo {
+    width: 250px;
+    height: 104px;
+    background-image: url('../../../../../public/imgs/logo-yellow.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    grid-column: 2 / span 4;
+
+    @include on-tablet {
+      height: 135px;
+      width: 324px;
+      margin-bottom: 56px;
+    }
+
+    @include on-desktop {
+      height: 183px;
+      width: 440px;
+      grid-column: 2 / span 5;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 562px;
+    grid-column: 2 / span 4;
+
+    @include on-desktop {
+      grid-column: span 5;
+    }
+  }
+}

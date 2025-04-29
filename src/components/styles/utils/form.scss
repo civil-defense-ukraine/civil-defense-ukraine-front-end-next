@@ -1,0 +1,83 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include on-tablet {
+    width: 696px;
+  }
+
+  @include on-desktop {
+    width: 888px;
+  }
+
+  &__button {
+    margin-top: 16px;
+    cursor: pointer;
+    margin-inline: auto;
+  }
+
+  &__checkbox {
+    &--label {
+      flex-grow: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+
+  &__textArea {
+    height: 212px;
+    width: 100%;
+    resize: none;
+    border: 1px solid $black;
+    font-family: 'Figtree', sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+
+    &__small {
+      height: 112px;
+    }
+  }
+}
+
+.formField {
+  background-color: $white-bg;
+  margin-top: 8px;
+  border-radius: 16px;
+  border: none;
+  outline: none;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'Figtree', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+
+  &__notValid {
+    border: 2px solid red;
+
+    &--text {
+      color: red;
+      font-weight: 500;
+    }
+  }
+}
+
+// label {
+//   font-size: 16px;
+//   line-height: 24px;
+// }
+
+// ::placeholder {
+//   color: #a6aeb7;
+//   font-family: 'Figtree', sans-serif;
+//   font-size: 14px;
+//   line-height: 21px;
+// }
+
+// input[type='checkbox']  {
+//   height: 24px;
+//   width: 24px;
+//   margin: 0;
+// }

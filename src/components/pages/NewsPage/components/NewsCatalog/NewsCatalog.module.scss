@@ -1,0 +1,23 @@
+@import '../../../../styles/styles.scss';
+
+.container {
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 16px;
+    row-gap: 24px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 56px;
+  }
+}

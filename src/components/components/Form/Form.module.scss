@@ -1,0 +1,21 @@
+@import '../../styles/styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  @include gap-btw-blocks;
+
+  @include on-tablet {
+    align-items: center;
+  }
+}
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.text {
+  font-style: italic;
+  font-size: 13px;
+}

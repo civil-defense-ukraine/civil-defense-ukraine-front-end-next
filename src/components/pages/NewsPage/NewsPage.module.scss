@@ -1,0 +1,40 @@
+@import '../../styles/styles.scss';
+
+.container {
+  padding: 18px 18px 89px;
+  @include max-width;
+
+  @include on-tablet {
+    padding: 32px 69px 72px;
+  }
+
+  @include on-desktop {
+    padding: 40px 48px 85px;
+  }
+
+  @include max-width;
+}
+
+.latestArticle {
+  margin-bottom: 80px;
+  @include on-tablet {
+    margin-bottom: 88px;
+    align-self: flex-start;
+  }
+
+  @include on-desktop {
+    margin-bottom: 100px;
+  }
+}
+
+.heading {
+  font-weight: 700;
+  padding-inline: 10px;
+  text-align: left;
+  align-self: start;
+  padding-bottom: 18px;
+
+  @include on-tablet {
+    padding-bottom: 32px;
+  }
+}

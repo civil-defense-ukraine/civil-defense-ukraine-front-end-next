@@ -1,0 +1,184 @@
+@import '../../styles/styles.scss';
+
+.topBar {
+  background-color: $blue;
+  font-size: 20px;
+  font-weight: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  box-shadow: 0px 4px 4px -1px #0c0c0d0d;
+  box-shadow: 0px 4px 4px -1px #0c0c0d1a;
+  @include on-tablet {
+    position: static;
+  }
+
+  &__menu {
+    background-color: $white;
+    box-shadow: none;
+  }
+
+  &__content {
+    height: $header-height;
+    @include max-width;
+    padding-block: 34px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    @include padding-inline;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+  }
+
+  &__button {
+    flex-shrink: 0;
+    color: $yellow;
+    width: 160px;
+
+    @include on-tablet {
+      width: 204px;
+    }
+
+    &:hover {
+      border: 1px solid $white;
+      background-color: $blue;
+      color: $white;
+
+      & > div {
+        background-color: $white;
+      }
+    }
+
+    &:active {
+      background-color: $blue--dark;
+    }
+
+    &__menu {
+      color: $blue;
+      border-color: $blue;
+
+      & > div {
+        background: $blue;
+      }
+    }
+  }
+
+  &__icon {
+    padding: 10px;
+    margin-right: 19px;
+
+    @include on-tablet {
+      display: none;
+    }
+  }
+}
+
+.nav {
+  display: none;
+
+  @include on-tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+    padding-inline: 24px;
+  }
+
+  @include on-desktop {
+    gap: 36px;
+  }
+
+  &__item {
+    list-style: none;
+    color: $white;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+}
+
+.icon1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+  position: relative;
+  background-color: inherit;
+  padding-inline: 16px;
+  transition: transform 500ms;
+
+  @include on-desktop {
+    padding-inline: 24px;
+  }
+}
+
+.hamburger {
+  position: relative;
+  cursor: pointer;
+  height: 13px;
+  width: 16px;
+
+  &__selected {
+    height: 16px;
+    width: 16px;
+  }
+
+  &:target .menu {
+    transform: translateX(100%);
+  }
+}
+
+.bar {
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 16px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: all 500ms ease-in-out;
+
+  &__0 {
+    top: 0;
+    &__selected {
+      transform: rotate(45deg);
+      transform-origin: top left;
+      width: 21px;
+      background-color: #000;
+    }
+  }
+
+  &__1 {
+    top: 41%;
+
+    &__selected {
+      transform: translateX(-100%);
+      background-color: transparent;
+    }
+  }
+
+  &__2 {
+    top: 41%;
+
+    &__selected {
+      transform: translateX(100%);
+      background-color: transparent;
+    }
+  }
+
+  &__3 {
+    bottom: 0;
+    &__selected {
+      transform: rotate(-45deg);
+      transform-origin: bottom left;
+      background-color: #000;
+      width: 21px;
+    }
+  }
+}

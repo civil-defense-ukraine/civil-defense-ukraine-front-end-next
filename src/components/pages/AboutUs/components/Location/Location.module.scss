@@ -1,0 +1,81 @@
+@import '../../../../styles/styles.scss';
+
+.h2 {
+  @include on-tablet {
+    text-align: left;
+  }
+}
+
+.info {
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 46px;
+
+  @include on-tablet {
+    padding-bottom: 0;
+    align-items: flex-start;
+    margin-bottom: 77px;
+  }
+
+  @include on-desktop {
+    margin-bottom: 0;
+  }
+
+  & > li > a {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    @include on-tablet {
+      flex-direction: row;
+      text-align: left;
+    }
+  }
+}
+
+.location {
+  background-image: url('/imgs/about-us-page/bg-location.png');
+  background-size: cover;
+  background-position: center;
+  color: $white;
+  @include gap-btw-blocks;
+
+  &__container {
+    background-color: rgba(7, 17, 28, 0.7);
+    @include padding-inline;
+    padding-block: 88px;
+    text-align: center;
+  }
+
+  &__header {
+    padding-bottom: 32px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include on-desktop {
+      flex-direction: row;
+      gap: 32px;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__img {
+    background-image: url('/imgs/about-us-page/location.png');
+    height: 397px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    border-radius: 24px;
+    flex-grow: 0;
+
+    @include on-desktop {
+      width: 547px;
+    }
+  }
+}

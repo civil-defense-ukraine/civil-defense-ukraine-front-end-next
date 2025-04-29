@@ -1,0 +1,80 @@
+@import './vars-colors';
+
+.button {
+  font-family: 'Figtree', sans-serif;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700 !important;
+  height: 48px;
+  line-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+  cursor: pointer;
+
+  @include on-tablet {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  &--secondary {
+    width: 100%;
+    max-width: calc(320px - 18px * 2);
+
+    @media (min-width: 375px) {
+      max-width: 340px;
+    }
+    @include on-tablet {
+      width: 204px;
+    }
+  }
+
+  &--yellow {
+    border: 1px solid $yellow;
+    border-radius: 24px;
+    background-color: $yellow;
+    color: $black;
+    transition: all 500ms;
+
+    &:hover {
+      background-color: $white;
+    }
+    &:active {
+      background-color: $yellow--dark;
+    }
+    &:disabled {
+      background-color: $grey;
+      border-color: $grey;
+      cursor: not-allowed;
+      color: white;
+
+      & > div {
+        background-color: $white;
+      }
+    }
+  }
+
+  &--transparent {
+    border: 1px solid $yellow;
+    background-color: rgb(0 0 0 / 0.001);
+    border-radius: 24px;
+    text-decoration: none;
+    color: $black;
+
+    transition: all 500ms;
+
+    &:hover {
+      background-color: $yellow--dark;
+    }
+    &:active {
+      background-color: $yellow;
+    }
+
+    &:disabled {
+      border: 1px solid $grey;
+      color: $grey;
+    }
+  }
+}

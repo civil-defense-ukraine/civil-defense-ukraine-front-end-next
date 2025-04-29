@@ -1,0 +1,23 @@
+.hide--left {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.hide--right {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.hide--bottom {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.hide--img {
+  filter: blur(4px);
+}
+
+.show {
+  transition: all 2s;
+  opacity: 1;
+  filter: none;
+  transform: translate(0) scale(1);
+}

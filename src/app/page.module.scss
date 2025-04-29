@@ -1,0 +1,5 @@
+@import '../components/styles/styles.scss';
+
+.container {
+  @include gap-for-sticky-header;
+}

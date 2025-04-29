@@ -1,0 +1,31 @@
+@import '../components/styles/styles.scss';
+html,
+body,
+p,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.page {
+  font-family: 'Figtree', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5rem;
+  color: $black;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.scroll {
+  overflow: auto;
+}

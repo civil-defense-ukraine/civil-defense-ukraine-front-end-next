@@ -1,0 +1,30 @@
+@import '../../styles/styles.scss';
+
+.header {
+  background-image: url('/imgs/about-us-page/bg.png');
+  background-size: cover;
+  background-position: center;
+  height: 190px;
+  padding-top: 26px;
+  padding-left: 18px;
+  background-color: $blue;
+  @include gap-for-sticky-header;
+
+  @include on-tablet {
+    background-image: url('/imgs/about-us-page/bg-tablet.png');
+    background-position: center;
+    padding-top: 26px;
+    padding-left: 70px;
+  }
+
+  @include on-desktop {
+    background-image: url('/imgs/about-us-page/bg-desktop.png');
+    height: 348px;
+    padding-top: 32px;
+    padding-left: 48px;
+  }
+}
+
+.max_width {
+  @include max-width;
+}

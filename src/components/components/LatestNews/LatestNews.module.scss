@@ -1,0 +1,119 @@
+@import '../../styles/styles.scss';
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'main main'
+    'button1 button2'
+    'buttonMain buttonMain';
+
+  margin-inline: auto;
+  justify-items: center;
+  grid-auto-flow: dense;
+  width: 100%;
+
+  @include on-tablet {
+    grid-template-areas:
+      'header header header'
+      'button1 main button2'
+      'buttonMain buttonMain buttonMain';
+  }
+
+  @include on-desktop {
+    max-width: 1440px;
+  }
+
+  @include gap-btw-blocks;
+  align-items: center;
+}
+
+.header {
+  padding-bottom: 24px;
+  grid-area: header;
+  text-align: center;
+
+  @include on-tablet {
+    padding-bottom: 32px;
+  }
+}
+
+.center {
+  grid-area: main;
+}
+
+.articles {
+  grid-area: main;
+  display: flex;
+  overflow: hidden;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: $news-card-width;
+  margin-bottom: 24px;
+
+  @include on-tablet {
+    max-width: calc($news-card-width * 2 + 16px);
+    margin-bottom: 32px;
+  }
+
+  @include on-desktop {
+    max-width: calc(536px * 2 + 16px);
+  }
+}
+
+.button {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  grid-area: button2;
+  justify-self: end;
+
+  & :first-child {
+    background-color: $blue;
+  }
+
+  &:hover {
+    box-shadow: 0px 1px 4px 0px #0c0c0d1a;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    box-shadow: none;
+
+    & :first-child {
+      background-color: $grey;
+    }
+  }
+
+  & > div {
+    height: 25px;
+    width: 15px;
+  }
+
+  &__left {
+    grid-area: button1;
+    justify-self: start;
+
+    & :first-child {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.mainButton {
+  grid-area: buttonMain;
+  justify-self: center;
+  max-width: calc(320px - 18px * 2);
+  margin-top: 24px;
+
+  @media (min-width: 375px) {
+    max-width: 327px;
+  }
+}

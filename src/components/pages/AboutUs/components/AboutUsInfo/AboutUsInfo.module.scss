@@ -1,0 +1,83 @@
+@import '../../../../styles/styles.scss';
+
+.container {
+  @include padding-inline;
+  padding-top: 50px;
+  padding-bottom: 125px;
+
+  @include on-tablet {
+    padding-top: 88px;
+    padding-bottom: 164px;
+  }
+
+  @include on-desktop {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    @include max-width;
+  }
+}
+
+.article {
+  padding: 8px;
+  margin-bottom: 24px;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+
+  @include on-tablet {
+    gap: 24px;
+    flex-direction: row;
+  }
+
+  @include on-desktop {
+    align-items: start;
+    max-width: 1116px;
+  }
+
+  &:nth-of-type(2) {
+    @include on-tablet {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__header {
+    padding-bottom: 16px;
+    text-align: center;
+
+    @include on-tablet {
+      text-align: left;
+    }
+
+    @include on-desktop {
+      padding-bottom: 32px;
+    }
+  }
+
+  &__img {
+    height: 314px;
+
+    width: 100%;
+    border-radius: 24px;
+    object-fit: cover;
+
+    @include on-tablet {
+      height: 295px;
+      width: 311px;
+    }
+
+    @include on-desktop {
+      height: 501px;
+      width: 526px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 21px;
+
+    @include on-desktop {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}

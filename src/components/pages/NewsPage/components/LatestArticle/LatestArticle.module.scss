@@ -1,0 +1,120 @@
+@import '../../../../styles/styles.scss';
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: transform 500ms;
+
+  @include on-tablet {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  @include on-desktop {
+    max-width: 1116px;
+    gap: 32px;
+  }
+}
+
+.img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+  width: 100%;
+  max-height: 350px;
+  align-self: center;
+
+  @include on-tablet {
+    flex-basis: 311px;
+    height: 296px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  @include on-desktop {
+    flex-basis: 501px;
+    height: 501px;
+  }
+
+  &__default {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+
+.heading {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.tag {
+  align-self: start;
+  display: inline-block;
+  color: $blue;
+  text-transform: uppercase;
+  font-weight: 700;
+  height: 37px;
+  line-height: 37px;
+  text-align: center;
+  padding-inline: 16px;
+  border: 1px solid $blue;
+  border-radius: 24px;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date {
+  font-size: 14px;
+  color: $text-color;
+  text-align: right;
+  text-wrap: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+
+  & > p {
+    display: block;
+  }
+
+
+  &__icon {
+    padding: 10px;
+    height: 44px;
+    width: 44px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    background-color: $white-bg;
+  }
+}
+
+.mainText {
+  font-size: 14px;
+  line-height: 1.5em;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  height: calc(1.5em * 4);
+
+  @include on-tablet {
+    font-size: 16px;
+  }
+}
