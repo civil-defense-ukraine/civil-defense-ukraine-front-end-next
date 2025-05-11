@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://civil-defense-ukraine.com
+Host: https://www.civil-defense-ukraine.com
 
 # Sitemaps
-Sitemap: https://civil-defense-ukraine.com/sitemap.xml
+Sitemap: https://www.civil-defense-ukraine.com/sitemap.xml
