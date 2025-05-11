@@ -7,13 +7,16 @@ export async function request<T>(
   method: RequestMethod = 'GET',
   data: any = null,
 ): Promise<T> {
-  const options: RequestInit = { method };
+  const options: RequestInit = {
+    method,
+    cache: 'no-store',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+    },
+  };
 
   if (data) {
     options.body = JSON.stringify(data);
-    options.headers = {
-      'Content-Type': 'application/json; charset=utf-8',
-    };
   }
 
   return fetch(`${BASE_URL}/${path}`, options).then(response => {
