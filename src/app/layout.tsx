@@ -7,12 +7,35 @@ import {
 } from "@/components/features/getInitialData";
 import { StoreProvider } from "@/components/components/StoreProvider/StoreProvider";
 import { MenuClient } from "@/components/components/MenuManager/MenuClient";
-
 export const metadata: Metadata = {
   title: "Civil Defense Ukraine",
   description:
-    "Civil Defense Ukraine is a charitable organization that raises funds for the people of Ukraine who are defending our country",
+    "Civil Defense Ukraine is a charitable organization supporting Ukraine’s defenders by raising essential funds to aid those protecting the nation.",
+  openGraph: {
+    title: "Civil Defense Ukraine",
+    description:
+      "Civil Defense Ukraine is a charitable organization supporting Ukraine’s defenders by raising essential funds to aid those protecting the nation.",
+    url: "https://www.civil-defense-ukraine.com/",
+    siteName: "Civil Defense Ukraine",
+    images: [
+      {
+        url: "/imgs/main-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Main banner for Civil Defense Ukraine",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: "/favicon-96x96.png",  
+    shortcut: "/favicon.ico",    
+    apple: "/apple-touch-icon.png", 
+  },
 };
+
+
 
 const figtree = Figtree({
   weight: ["400", "500", "600", "700"],
