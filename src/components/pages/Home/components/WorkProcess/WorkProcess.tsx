@@ -1,40 +1,19 @@
-'use client'
-
-import { useEffect, useState } from 'react';
-import classNames from 'classnames';
-
-import styles from './WorkProcess.module.scss';
-import { useElementOnScreen } from '../../../../hooks/useElementOnScreen';
+import styles from "./WorkProcess.module.scss";
 
 const process = [
-  'Receive a request',
-  'Announce a fundraiser',
-  'Participate in fundraising activities',
-  'Buy the equipment',
-  'Deliver equipment to Ukraine',
-  'Receive a photo report ',
-  'Publish a gratitude report ',
-  'Provide documentation to auditors',
+  "Receive a request",
+  "Announce a fundraiser",
+  "Participate in fundraising activities",
+  "Buy the equipment",
+  "Deliver equipment to Ukraine",
+  "Receive a photo report ",
+  "Publish a gratitude report ",
+  "Provide documentation to auditors",
 ];
 
 export const WorkProcess = () => {
-  const { container, isVisible } = useElementOnScreen();
-  const [showSecondList, setShowSecondList] = useState(false);
-
-  useEffect(() => {
-    let timer = 0;
-    if (isVisible) {
-      timer = window.setTimeout(() => {
-        setShowSecondList(true);
-      }, 1250);
-    }
-    return () => {
-      clearTimeout(timer);
-      setShowSecondList(false);
-    };
-  }, [isVisible]);
   return (
-    <section className={styles.wrapper} ref={container}>
+    <section className={styles.wrapper}>
       <div className={styles.container}>
         <h2 className={`${styles.header} heading--h2`}>How We Work</h2>
         <div
@@ -43,9 +22,7 @@ export const WorkProcess = () => {
         <ul className={`${styles.items} ${styles.items_1}`}>
           {process.slice(0, 4).map((item, index) => (
             <li
-              className={classNames(`${styles.item}`, {
-                [styles.item_1]: isVisible,
-              })}
+              className={styles.item}
               key={item}
             >
               <div className={`${styles.item__index} heading--h2`}>
@@ -61,9 +38,7 @@ export const WorkProcess = () => {
         <ul className={`${styles.items} ${styles.items_2}`}>
           {process.slice(4).map((item, index) => (
             <li
-              className={classNames(`${styles.item}`, {
-                [styles.item_2]: showSecondList,
-              })}
+              className={styles.item}
               key={item}
             >
               <div className={`${styles.item__index} heading--h2`}>

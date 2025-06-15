@@ -24,13 +24,13 @@ export const Menu = () => {
     };
   }, [width, setShowMenu]);
 
-  const linkClick = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+  const linkClick = (targetHref: string) => {
     setShowMenu(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+
+    setTimeout(() => {
+      window.location.href = targetHref;
+    }, 300);
   };
 
   // Function to get link class dynamically based on the active route using window.location.pathname
@@ -49,7 +49,10 @@ export const Menu = () => {
           <Link
             href="/"
             className={getLinkClass("/")}
-            onClick={linkClick}
+            onClick={(e) => {
+              e.preventDefault();
+              linkClick("/");
+            }}
           >
             Home
           </Link>
@@ -58,7 +61,10 @@ export const Menu = () => {
           <Link
             href="/about-us"
             className={getLinkClass("/about-us")}
-            onClick={linkClick}
+            onClick={(e) => {
+              e.preventDefault();
+              linkClick("/about-us");
+            }}
           >
             About Us
           </Link>
@@ -67,7 +73,10 @@ export const Menu = () => {
           <Link
             href="/news"
             className={getLinkClass("/news")}
-            onClick={linkClick}
+            onClick={(e) => {
+              e.preventDefault();
+              linkClick("/news");
+            }}
           >
             News
           </Link>
@@ -76,7 +85,10 @@ export const Menu = () => {
           <Link
             href="/reports"
             className={getLinkClass("/reports")}
-            onClick={linkClick}
+            onClick={(e) => {
+              e.preventDefault();
+              linkClick("/reports");
+            }}
           >
             Reports
           </Link>

@@ -1,28 +1,18 @@
-import { useElementOnScreen } from '../../../../hooks/useElementOnScreen';
-import Image from 'next/image';
-import styles from './AboutUsInfo.module.scss';
+import styles from "./AboutUsInfo.module.scss";
+import { ImageWithReveal } from "./ImageWithReveal";
 
 export const AboutUsInfo = () => {
-  const { isVisible, container } = useElementOnScreen();
-
   return (
-    <section ref={container} className={styles.container}>
-      <article
-        className={`${styles.article} hide--right ${isVisible ? 'show' : ''}`}
-      >
-        <div className={`${styles.article__img} skeleton`}>
-          <Image
-            className={styles.article__img}
-            src="/imgs/about-us-page/founders.png"
-            alt="Civil Defense Founders"
-            loading="lazy"
-            width={500}
-            height={300}
-            onLoadingComplete={(e) => {
-              e.parentElement?.classList.remove('skeleton');
-            }}
-          />
-        </div>
+    <section className={styles.container}>
+      <article className={`${styles.article}`}>
+        <ImageWithReveal
+          className={styles.article__img}
+          src="/imgs/about-us-page/founders.png"
+          alt="Civil Defense Founders"
+          width={500}
+          height={300}
+          hiddenClassName="hide--left"
+        />
         <span>
           <h2 className={`${styles.article__header} heading--h2`}>About Us</h2>
           <p className={styles.article__text}>
@@ -39,23 +29,15 @@ export const AboutUsInfo = () => {
         </span>
       </article>
 
-      <article
-        className={`${styles.article} hide--left ${isVisible ? 'show' : ''}`}
-      >
-        <div className={`${styles.article__img} skeleton`}>
-          <Image
-            className={styles.article__img}
-            src="/imgs/about-us-page/whatDoWeDo.png"  
-            alt="Territorial Defense Unit"
-            loading="lazy"
-            width={500} 
-            height={300} 
-            onLoadingComplete={(e) => {
-              e.parentElement?.classList.remove('skeleton');
-            }}
-          />
-        </div>
-
+      <article className={`${styles.article} `}>
+        <ImageWithReveal
+          className={styles.article__img}
+          src="/imgs/about-us-page/whatDoWeDo.png"
+          alt="Territorial Defense Unit"
+          width={500}
+          height={300}
+          hiddenClassName="hide--right"
+        />
         <span>
           <h2 className={`${styles.article__header} heading--h2`}>
             What We Do?
@@ -72,7 +54,7 @@ export const AboutUsInfo = () => {
             know, who have volunteered for the Territorial Defense Unit, have no
             protection gear, no helmets, and no bulletproof vests. They lack
             night vision gear to be able to see, during the tough fights at
-            night, and they lack walkie-talkies to communicate with one another.{' '}
+            night, and they lack walkie-talkies to communicate with one another.{" "}
             <br /> <br /> So, my father and I started buying military protective
             equipment, and we have now dedicated the last years to doing so...
           </p>
@@ -80,21 +62,16 @@ export const AboutUsInfo = () => {
       </article>
 
       <article
-        className={`${styles.article} hide--right ${isVisible ? 'show' : ''}`}
+        className={`${styles.article} hide--right ${true ? "show" : ""}`}
       >
-        <div className={`${styles.article__img} skeleton`}>
-          <Image
-            className={styles.article__img}
-            src="/imgs/about-us-page/mission.png" 
-            alt="Stop War"
-            onLoadingComplete={(e) => {
-              e.parentElement?.classList.remove('skeleton');
-            }}
-            loading="lazy"
-            width={500}  
-            height={300}
-          />
-        </div>
+        <ImageWithReveal
+          className={styles.article__img}
+          src="/imgs/about-us-page/mission.png"
+          alt="Stop War"
+          width={500}
+          height={300}
+          hiddenClassName="hide--left"
+        />
         <span>
           <h2 className={`${styles.article__header} heading--h2`}>
             Our Mission

@@ -58,18 +58,17 @@ $total-items: 4;
 .item {
   display: flex;
   gap: 14px;
-  opacity: 0;
   list-style: none;
   position: relative;
   align-items: center;
 
-  &_1 {
-    animation: fadeIn 0.5s linear forwards;
-  }
+  // &_1 {
+  //   animation: fadeIn 0.5s linear forwards;
+  // }
 
-  &_2 {
-    animation: fadeIn 0.5s linear forwards;
-  }
+  // &_2 {
+  //   animation: fadeIn 0.5s linear forwards;
+  // }
 
   &__index {
     height: 54px;
@@ -133,28 +132,28 @@ $total-items: 4;
   }
 }
 
-@for $i from 1 through $total-items {
-  .item_1:nth-child(#{$i}) {
-    animation-delay: 0.25s * $i;
-  }
-}
+// @for $i from 1 through $total-items {
+//   .item_1:nth-child(#{$i}) {
+//     animation-delay: 0.25s * $i;
+//   }
+// }
 
-@for $i from 1 through $total-items {
-  .item_2:nth-child(#{$i}) {
-    animation-delay: 0.25s * $i;
-  }
-}
+// @for $i from 1 through $total-items {
+//   .item_2:nth-child(#{$i}) {
+//     animation-delay: 0.25s * $i;
+//   }
+// }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    top: 100px;
-  }
-  75% {
-    opacity: 0.5;
-    top: 0px;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//     top: 100px;
+//   }
+//   75% {
+//     opacity: 0.5;
+//     top: 0px;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }

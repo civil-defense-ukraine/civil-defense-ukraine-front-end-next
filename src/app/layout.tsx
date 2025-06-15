@@ -7,6 +7,7 @@ import {
 } from "@/components/features/getInitialData";
 import { StoreProvider } from "@/components/components/StoreProvider/StoreProvider";
 import { MenuClient } from "@/components/components/MenuManager/MenuClient";
+
 export const metadata: Metadata = {
   title: "Civil Defense Ukraine",
   description:
@@ -30,8 +31,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon-96x96.png",  
-    shortcut: "/favicon.ico",    
-    apple: "/apple-touch-icon.png", 
+    shortcut: "/favicon.ico",
   },
 };
 

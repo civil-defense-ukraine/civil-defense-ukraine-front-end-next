@@ -1,16 +1,18 @@
-import { useMemo, useState } from 'react';
-import styles from './TeamSection.module.scss';
-import { useWidth } from '../../../../hooks/useWidth';
-import classNames from 'classnames';
-import { useAppSelector } from '../../../../app/hooks';
-import { Loader } from '../../../../components/Loader';
-import { TeamCard } from './components/TeamCard';
-import { screenWidth } from '../../../../constants/screenWidth';
-import { ErrorComponent } from '@/components/components/ErrorComponent';
+"use client";
+
+import { useMemo, useState } from "react";
+import styles from "./TeamSection.module.scss";
+import { useWidth } from "../../../../hooks/useWidth";
+import classNames from "classnames";
+import { useAppSelector } from "../../../../app/hooks";
+import { Loader } from "../../../../components/Loader";
+import { TeamCard } from "./components/TeamCard";
+import { screenWidth } from "../../../../constants/screenWidth";
+import { ErrorComponent } from "@/components/components/ErrorComponent";
 
 export const TeamSection = () => {
   const [showAllTeam, setShowAllTeam] = useState(false);
-  const { team, loading, error } = useAppSelector(state => state.team);
+  const { team, loading, error } = useAppSelector((state) => state.team);
 
   const width = useWidth();
 
@@ -22,8 +24,14 @@ export const TeamSection = () => {
     }
   }, [width]);
 
-  const visibleTeam = useMemo(() => team.slice(0, itemsPerPage), [team, itemsPerPage]);
-  const restOfTeam = useMemo(() => team.slice(itemsPerPage), [team, itemsPerPage]);
+  const visibleTeam = useMemo(
+    () => team.slice(0, itemsPerPage),
+    [team, itemsPerPage]
+  );
+  const restOfTeam = useMemo(
+    () => team.slice(itemsPerPage),
+    [team, itemsPerPage]
+  );
   const getMaxHeight = useMemo(() => {
     if (!showAllTeam) {
       return 0;
@@ -39,18 +47,24 @@ export const TeamSection = () => {
     return restOfTeam.length * (454 + 32);
   }, [showAllTeam, width, restOfTeam, itemsPerPage]);
 
-
   return (
     <section className={styles.container}>
       <h2 className={`${styles.header} heading--h2`}>Our Team</h2>
-      {loading && (<div className={styles.loader}><Loader /></div>)}
+      {loading && (
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      )}
       {error.length > 0 && <ErrorComponent errorText={error} />}
 
       {error.length === 0 && !loading && (
         <>
           <div className={styles.team}>
-            {visibleTeam.map(person => (
-              <TeamCard person={person} key={person.id} />
+            {visibleTeam.map((person) => (
+              <TeamCard
+                person={person}
+                key={person.id}
+              />
             ))}
           </div>
           <div
@@ -61,18 +75,21 @@ export const TeamSection = () => {
               maxHeight: `${getMaxHeight}px`,
             }}
           >
-            {restOfTeam.map(person => (
-              <TeamCard person={person} key={person.id} />
+            {restOfTeam.map((person) => (
+              <TeamCard
+                person={person}
+                key={person.id}
+              />
             ))}
           </div>
           <button
             className={`${styles.teamSection__button} button button--secondary button--transparent`}
             disabled={team.length <= visibleTeam.length || error.length !== 0}
             onClick={() => {
-              setShowAllTeam(prevState => !prevState);
+              setShowAllTeam((prevState) => !prevState);
             }}
           >
-            {`${showAllTeam ? 'SEE LESS' : 'SEE ALL'} `}
+            {`${showAllTeam ? "SEE LESS" : "SEE ALL"} `}
             {!showAllTeam && (
               <div className="icon icon--button icon--arrow icon--arrow--left"></div>
             )}
