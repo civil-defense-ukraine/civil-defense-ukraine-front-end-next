@@ -96,7 +96,7 @@ export const TopBar = () => {
           <div className="icon icon--button icon--send icon--send--yellow"></div>
         </Link>
 
-        { width < screenWidth.tablet && (
+        { width < screenWidth.tablet || false && (
           <div
             className={styles.icon1}
             onClick={() => setShowMenu((prev) => !prev)}

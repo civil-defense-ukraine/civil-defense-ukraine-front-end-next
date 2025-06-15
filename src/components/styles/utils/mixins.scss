@@ -55,6 +55,7 @@
   display: flex;
   flex-direction: column;
   margin-inline: auto;
+  overflow-x: hidden;
 }
 
 @mixin gap-for-sticky-header {
