@@ -13,7 +13,7 @@ module.exports = {
     ];
 
     const newsUrls = news.map(newsItem => ({
-      loc: `https://www.civil-defense-ukraine.com/news/${newsItem.id}`,
+      loc: `https://www.civil-defense-ukraine.com/news/${newsItem.link}`,
       lastmod: newsItem.lastUpdated,
     }));
 
