@@ -51,11 +51,18 @@
 }
 
 @mixin max-width {
-  max-width: 1440px;
+  width: 100%;
+  max-width: 90vw;
+
   display: flex;
   flex-direction: column;
   margin-inline: auto;
   overflow-x: hidden;
+
+  @media (min-width: 1440px) {
+    max-width: 1440px;
+    margin-inline: auto;
+  }
 }
 
 @mixin gap-for-sticky-header {
