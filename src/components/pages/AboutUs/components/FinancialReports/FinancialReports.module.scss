@@ -3,15 +3,20 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   @include padding-inline;
   gap: 16px;
   @include gap-btw-blocks;
+  font-size: 16px;
+  line-height: 24px;
+  max-width: 900px !important;
+  align-items: center;
+  margin: auto;
 }
 
 .header {
   padding-bottom: 16px;
   text-align: center;
+  align-self: center;
 
   @include on-tablet {
     text-align: left;
@@ -20,19 +25,17 @@
   @include on-desktop {
     padding-bottom: 32px;
   }
-
-  
 }
 
 .reports_container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  //flex-wrap: wrap;
+  //justify-content: center;
   gap: 20px;
 }
 
 .report {
-  height: 150px;
+  //height: 150px;
   border-radius: 24px;
   background-color: $blue;
   color: $yellow;

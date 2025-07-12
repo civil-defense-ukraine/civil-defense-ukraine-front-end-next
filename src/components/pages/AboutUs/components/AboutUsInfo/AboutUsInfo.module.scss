@@ -1,4 +1,4 @@
-@import '../../../../styles/styles.scss';
+@import "../../../../styles/styles.scss";
 
 .container {
   @include padding-inline;
@@ -13,7 +13,8 @@
   @include on-desktop {
     padding-top: 100px;
     padding-bottom: 150px;
-    @include max-width;
+    max-width: 1200px;
+    margin-inline: auto;
   }
 }
 
@@ -30,8 +31,7 @@
   }
 
   @include on-desktop {
-    align-items: start;
-    max-width: 1116px;
+    justify-content: space-between;
   }
 
   &:nth-of-type(2) {
@@ -78,6 +78,7 @@
     @include on-desktop {
       font-size: 16px;
       line-height: 24px;
+      width: 526px;
     }
   }
 }
