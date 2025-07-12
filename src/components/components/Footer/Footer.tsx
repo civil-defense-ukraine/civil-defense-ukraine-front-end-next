@@ -68,11 +68,6 @@ export const Footer = () => {
           <Contacts />
         </div>
 
-        <div className={styles.socialMedia}>
-          <p className="heading--h3">Follow Us</p>
-          <SocialMedia />
-        </div>
-
         <div className={styles.registration}>
           <a
             target="_blank"
@@ -85,6 +80,24 @@ export const Footer = () => {
             ></div>
             <p>Registration Info</p>
           </a>
+        </div>
+        <div className={styles.registration}>
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="http://localhost:3000/about-us#financial-reports"
+            className={`${styles.info__text} link heading--h3`}
+          >
+            <div
+              className={`${styles.info__icon} icon icon--small icon--report`}
+            ></div>
+            <p>Financial Reports</p>
+          </a>
+        </div>
+
+        <div className={styles.socialMedia}>
+          <p className="heading--h3">Follow Us</p>
+          <SocialMedia />
         </div>
 
         {showDonateButton && <DonateButton classname={styles.fixedButton} />}

@@ -1,4 +1,4 @@
-@import '../../styles/styles.scss';
+@import "../../styles/styles.scss";
 
 .topBar {
   background-color: $blue;
@@ -22,8 +22,7 @@
   }
 
   &__content {
-    height: $header-height;
-    @include max-width;
+    min-height: $header-height;
     padding-block: 34px;
     display: flex;
     flex-direction: row;

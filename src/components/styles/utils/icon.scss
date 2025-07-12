@@ -88,6 +88,11 @@
     mask-image: url('/imgs/icons/globe.svg');
   }
 
+    &--report {
+    -webkit-mask-image: url('/imgs/icons/report.svg');
+    mask-image: url('/imgs/icons/report.svg');
+  }
+
   &--email {
     -webkit-mask-image: url('/imgs/icons/email.svg');
     mask-image: url('/imgs/icons/email.svg');

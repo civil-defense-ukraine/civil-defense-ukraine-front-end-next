@@ -5,6 +5,7 @@ import { AboutUsInfo } from "./components/AboutUsInfo";
 import { Location } from "./components/Location/Location";
 import { TeamSection } from "./components/TeamSeaction";
 import { Breadcrumbs } from "../../components/Breadcrumbs";
+import { FinancialReports } from "./components/FinancialReports/FinancialReports";
 
 const AboutUs = () => {
   return (
@@ -19,7 +20,9 @@ const AboutUs = () => {
       </section>
       <TeamSection />
       <Location />
+      <FinancialReports/>
       <Form />
+
     </section>
   );
 };
