@@ -80,12 +80,10 @@ export const Footer = () => {
             ></div>
             <p>Registration Info</p>
           </a>
-        </div>
-        <div className={styles.registration}>
-          <a
+              <a
             target="_blank"
             rel="noopener noreferrer"
-            href="http://localhost:3000/about-us#financial-reports"
+            href="/about-us#financial-reports"
             className={`${styles.info__text} link heading--h3`}
           >
             <div
