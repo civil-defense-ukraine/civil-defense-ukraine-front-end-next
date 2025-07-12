@@ -22,14 +22,15 @@
   }
 
   &__content {
+    @include max-width;
+    @include padding-inline;
     min-height: $header-height;
     padding-block: 34px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     justify-content: space-between;
     align-items: center;
 
-    @include padding-inline;
     box-sizing: border-box;
     position: relative;
     z-index: 5;

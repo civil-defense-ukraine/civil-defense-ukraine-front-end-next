@@ -18,11 +18,11 @@ const AboutUs = () => {
       <section className={styles.max_width}>
         <AboutUsInfo />
       </section>
+      <FinancialReports />
       <TeamSection />
       <Location />
-      <FinancialReports/>
-      <Form />
 
+      <Form />
     </section>
   );
 };
