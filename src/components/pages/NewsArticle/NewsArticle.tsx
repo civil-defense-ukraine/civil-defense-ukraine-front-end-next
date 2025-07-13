@@ -66,6 +66,8 @@ const NewsArticle = ({ newsId }: { newsId: string }) => {
     });
   };
 
+    const splitText = text.split(/<\/?br\s*\/?>/i);
+
   return (
     <div className={styles.container}>
       <article className={styles.article}>
@@ -98,7 +100,7 @@ const NewsArticle = ({ newsId }: { newsId: string }) => {
           />
         </div>
         <p className={styles.mainText}>
-          {text.split("<br/>").map((textEl, index) => (
+          {splitText.map((textEl, index) => (
             <span key={index}>
               {textEl} <br />
             </span>

@@ -2,17 +2,10 @@
 
 .container {
   @include padding-inline;
-  padding-top: 50px;
-  padding-bottom: 125px;
-
-  @include on-tablet {
-    padding-top: 88px;
-    padding-bottom: 164px;
-  }
+  @include gap-btw-blocks;
 
   @include on-desktop {
-    padding-top: 100px;
-    padding-bottom: 150px;
+
     max-width: 1200px;
     margin-inline: auto;
   }

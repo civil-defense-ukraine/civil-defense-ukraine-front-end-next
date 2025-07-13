@@ -24,6 +24,7 @@ export const NewsCard: React.FC<Props> = ({ newsData, style }) => {
     text,
     180,
   );
+  const splitNormalizedText = normalizedText.split(/<\/?br\s*\/?>/i);
 
   return (
     <article className={styles.container} style={style}>
@@ -49,12 +50,12 @@ export const NewsCard: React.FC<Props> = ({ newsData, style }) => {
           <h3 className={`heading--h3`}>
             {getNormalized.slicedText(
               getNormalized.title(title),
-              width < 1240 ? 48 : 65,
+              width < 1240 ? 48 : 55,
             )}
           </h3>
           </div>
           <p className={styles.mainText}>
-            {normalizedText.split('<br/>').map((textEl, index) => (
+            {splitNormalizedText.map((textEl, index) => (
               <React.Fragment key={`${textEl.slice(5)}-${index}`}>
                 {textEl} <br />
               </React.Fragment>

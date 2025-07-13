@@ -4,7 +4,7 @@ import styles from './LatestArticle.module.scss';
 import { getNormalized } from '../../../../utils/getNormalized';
 import { News } from '../../../../types/News';
 import classNames from 'classnames';
-import Image from 'next/image'; // Import next/image for optimized image handling
+import Image from 'next/image'; 
 import { ReadMore } from '../../../../components/Buttons/ReadMore';
 import { useWidth } from '../../../../hooks/useWidth';
 import { screenWidth } from '../../../../constants/screenWidth';
@@ -22,7 +22,7 @@ export const LatestArticle: React.FC<Props> = ({ newsData }) => {
     text,
     width < screenWidth.desktop ? 180 : 300,
   );
-
+  const splitNormalizedText = normalizedText.split(/<\/?br\s*\/?>/i);
   return (
     <article className={styles.container}>
       <div
@@ -39,9 +39,9 @@ export const LatestArticle: React.FC<Props> = ({ newsData }) => {
           src={image}
           alt={title}
           onLoadingComplete={() => setLoaded(true)}
-          width={500} // Define a width for image optimization
-          height={300} // Define a height for image optimization
-          layout="responsive" // Responsive image
+          width={500}
+          height={300}
+          layout="responsive"
         />
       </div>
       <div className={styles.info}>
@@ -50,11 +50,11 @@ export const LatestArticle: React.FC<Props> = ({ newsData }) => {
         <h3 className={`${styles.heading} heading--h2`}>
           {getNormalized.slicedText(
             getNormalized.title(title),
-            width < 1240 ? 48 : 68,
+            width < 1240 ? 48 : 97,
           )}
         </h3>
         <p className={styles.mainText}>
-          {normalizedText.split('<br/>').map((textEl, index) => (
+          {splitNormalizedText.map((textEl, index) => (
             <React.Fragment key={index}>
               {textEl} <br />
             </React.Fragment>
