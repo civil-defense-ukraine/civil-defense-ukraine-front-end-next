@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 export const useWidth = () => {
-  const [width, setWidth] = useState<number>(0);
+  const [width, setWidth] = useState<number>(1440);
 
   useEffect(() => {
     const updateWidth = () => {
