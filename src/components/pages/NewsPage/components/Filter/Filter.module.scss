@@ -72,7 +72,8 @@
   box-sizing: border-box;
   width: 100%;
   padding: 10px 16px;
-  overflow: hidden;
+ overflow: hidden;
+
   border-radius: 16px;
   cursor: pointer;
 
@@ -83,7 +84,7 @@
 
   &__open {
     height: calc(var(--itemCount) * 46px);
-    z-index: 2;
+    z-index: 99;
   }
 }
 
