@@ -10,11 +10,11 @@ import { MenuContext } from "../../context/MenuContext";
 
 export const Menu = () => {
   const width = useWidth();
-  const { setShowMenu } = useContext(MenuContext);
+  const { showMenu, setShowMenu } = useContext(MenuContext);
 
   useEffect(() => {
     document.body.classList.add("no-scroll");
-    if (width >= 834) {
+    if (width >= 834 && showMenu) {
       document.body.classList.remove("no-scroll");
       setShowMenu(false);
     }
@@ -22,7 +22,7 @@ export const Menu = () => {
     return () => {
       document.body.classList.remove("no-scroll");
     };
-  }, [width, setShowMenu]);
+  }, [width, showMenu, setShowMenu]);
 
   const linkClick = (targetHref: string) => {
     setShowMenu(false);

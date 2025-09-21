@@ -1,9 +1,11 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export const useWidth = () => {
-  const [width, setWidth] = useState<number>(1440);
+  const [width, setWidth] = useState<number>(
+    typeof window !== "undefined" ? document.documentElement.clientWidth : 844
+  );
 
   useEffect(() => {
     const updateWidth = () => {
@@ -13,10 +15,10 @@ export const useWidth = () => {
     // Initialize width on mount
     updateWidth();
 
-    window.addEventListener('resize', updateWidth);
+    window.addEventListener("resize", updateWidth);
 
     return () => {
-      window.removeEventListener('resize', updateWidth);
+      window.removeEventListener("resize", updateWidth);
     };
   }, []);
 

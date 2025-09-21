@@ -26,6 +26,7 @@ type Props = {
 
 export const MenuProvider: React.FC<Props> = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
+
   const value = useMemo(
     () => ({ showMenu, setShowMenu }),
     [showMenu, setShowMenu]

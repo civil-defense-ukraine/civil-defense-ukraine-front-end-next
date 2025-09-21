@@ -20,7 +20,6 @@ export const TopBar = () => {
   const { showMenu, setShowMenu } = useContext(MenuContext);
   const width = useWidth();
   const pathname = usePathname();
-  console.log(width, screenWidth.tablet);
 
   const getBarClass = (order: number) =>
     classNames(`${styles.bar} ${styles[`bar__${order}`]}`, {
@@ -97,7 +96,7 @@ export const TopBar = () => {
           <div className="icon icon--button icon--send icon--send--yellow"></div>
         </Link>
 
-        { (width < screenWidth.tablet) && (
+        { (width <= screenWidth.tablet) && (
           <div
             className={styles.icon1}
             onClick={() => setShowMenu((prev) => !prev)}
